@@ -1,0 +1,1 @@
+GamerPub-Netcafe is netcafe system to improve the quality of service. of the netcafe management for the owner.
