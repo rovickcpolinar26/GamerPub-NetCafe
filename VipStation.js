@@ -1,4 +1,4 @@
-export const stations = [
+export const Vipstations = [
     {
         id: "Vipst-001",
         name: "VPC 1",

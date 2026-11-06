@@ -57,14 +57,14 @@ export const stations = [
         maxPlayers: 1,
     }, {
         id: "st-009",
-        name: "PC 3",
+        name: "PC 9",
         type: "PC",
         ratePerHour: 30,
         maxPlayers: 1,
     },
     {
         id: "st-0010",
-        name: "PC 3",
+        name: "PC 10",
         type: "PC",
         ratePerHour: 30,
         maxPlayers: 1,
