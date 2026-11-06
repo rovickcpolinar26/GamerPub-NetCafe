@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GamerPub-NetCafe</title>
+    <link rel="stylesheet" href="./css/main.css" />
+</head>
+
+<body>
+
+    <header class="app-header">
+        <h1 class="brand">GamerPub-NetCafe</h1>
+        <nav class="nav">
+            <a href="index.html" class="active">Stations</a>
+            <a href="#">Cafe menu</a>
+            <a href="#">Sessions</a>
+            <a href="#">Reports</a>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <section class="section">
+            <h2>Station board</h2>
+
+
+            <div class="filters" id="filters">
+                <button class="btn" data-filter="all">All</button>
+                <button class="btn secondary" data-filter="PC">PC</button>
+                <button class="btn secondary" data-filter="PS5">PS5</button>
+                <button class="btn secondary" data-filter="Xbox">Xbox</button>
+            </div>
+        </section>
+
+        <section class="section">
+
+            <div class="station-grid" id="station-grid"></div>
+        </section>
+
+    </main>
+
+
+    <script src="Model/Station.js"></script>
+    <script src="Views/view.js"></script>
+    <script src="Controllers/app.js"></script>
+</body>
+
+</html>
