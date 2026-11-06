@@ -2,16 +2,16 @@
 
 :root {
     --bg: #12142a;
-    --surface: #5663f1;
+    --surface: #1c2045;
     --surface-2: #252952;
     --line: #343969;
     --text: #e9ebfa;
     --muted: #9aa0c8;
     --accent: #2dd43b;
-    --accent-dark: #e39a2;
-
+    --accent-dark: #2dd43b;
 
     --pc: #ffb547;
+    --vip: #ff6fd8;
     --ps5: #4d9bff;
     --xbox: #4fd18b;
 
@@ -19,6 +19,8 @@
     --in-use: #ff6b6b;
     --reserved: #b58cff;
     --maintenance: #8a8fb3;
+
+    --measure: 1100px;
 }
 
 * {
@@ -64,27 +66,61 @@ a {
     outline-offset: 2px;
 }
 
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
 
 
-.app-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 1rem;
-    padding: 1rem 2rem;
+
+.masthead {
     background: var(--surface);
+    color: var(--text);
     border-bottom: 2px solid var(--line);
+    padding: 1.25rem 1.5rem;
 }
 
-.app-header .brand {
-    font-size: 1.6rem;
+.masthead__inner {
+    max-width: var(--measure);
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.25rem 1rem;
 }
+
+.wordmark {
+    margin: 0;
+    font-family: "Barlow Semi Condensed", "Barlow", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.wordmark span {
+    color: #e9ebfa48;
+    font-weight: 600;
+}
+
+.masthead__tagline {
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
 
 .nav {
     display: flex;
     gap: 0.5rem;
     flex-wrap: wrap;
+    margin-left: auto;
+    align-self: center;
 }
 
 .nav a {
@@ -105,8 +141,10 @@ a {
     font-weight: 600;
 }
 
+
+
 .container {
-    max-width: 1100px;
+    max-width: var(--measure);
     margin: 0 auto;
     padding: 2rem 1.25rem;
 }
@@ -116,6 +154,12 @@ a {
 }
 
 
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
 
 .station-grid {
     display: grid;
@@ -136,6 +180,10 @@ a {
 
 .station-card[data-type="PC"] {
     border-left-color: var(--pc);
+}
+
+.station-card[data-type="VipPC"] {
+    border-left-color: var(--vip);
 }
 
 .station-card[data-type="PS5"] {
@@ -190,7 +238,7 @@ a {
     font-weight: 600;
     cursor: pointer;
     padding: 0.55rem 1.2rem;
-    border: none;
+    border: 1px solid transparent;
     border-radius: 6px;
     background: var(--accent);
     color: var(--bg);
@@ -209,7 +257,7 @@ a {
 .btn.secondary {
     background: transparent;
     color: var(--text);
-    border: 1px solid var(--line);
+    border-color: var(--line);
 }
 
 .btn.secondary:hover {
@@ -329,8 +377,13 @@ tbody tr:hover {
 
 
 @media (max-width: 600px) {
-    .app-header {
+    .masthead {
         padding: 0.8rem 1rem;
+    }
+
+    .nav {
+        margin-left: 0;
+        width: 100%;
     }
 
     h1 {
